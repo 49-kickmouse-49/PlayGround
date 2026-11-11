@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101a2d" />
+  <title>Blocktown — Social Plaza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell" aria-label="Blocktown social plaza game">
+    <canvas id="world" aria-label="Game world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span></div><div><strong>BLOCKTOWN</strong><small>SOCIAL PLAZA</small></div></div>
+      <div class="server-pill"><i></i><span>PLAZA • 12 ONLINE</span></div>
+      <button class="profile" id="profileButton" aria-label="Edit your avatar"><span class="mini-avatar">☺</span><span class="profile-name">PLAYER</span><span class="chevron">⌄</span></button>
+    </header>
+    <section class="quest-card panel">
+      <div class="quest-icon">✦</div><div class="quest-copy"><div class="eyebrow">DAILY QUEST <span>+100</span></div><strong>Shiny things!</strong><p>Collect 5 plaza coins</p><div class="quest-progress"><div class="progress-track"><i id="questProgress"></i></div><small id="questCount">0 / 5</small></div></div>
+    </section>
+    <section class="coin-counter panel"><span class="coin-glyph">●</span><strong id="coinCount">0</strong><small>COINS</small></section>
+    <section class="chat panel" id="chatPanel" aria-label="Game chat">
+      <div class="chat-heading"><div><span class="chat-dot"></span><strong>PLAZA CHAT</strong><small>Be kind, have fun ✨</small></div><button id="chatToggle" aria-label="Collapse chat">−</button></div>
+      <div class="chat-feed" id="chatFeed" aria-live="polite"></div>
+      <form class="chat-form" id="chatForm"><span class="chat-symbol">↗</span><input id="chatInput" maxlength="120" autocomplete="off" placeholder="Say something nice..." aria-label="Type a chat message"><button aria-label="Send message">➤</button></form>
+    </section>
+    <div class="location-tag"><span>⌖</span> SUNSHINE PLAZA <i></i> SAFE ZONE</div>
+    <div class="controls-hint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span>to move</span><span class="keycap space">SPACE</span><span>jump</span></div>
+    <div class="toast" id="toast"></div>
+    <nav class="hotbar" aria-label="Game actions">
+      <button class="hotkey active" data-action="wave"><span class="hotkey-number">1</span><span class="action-icon">👋</span><small>WAVE</small></button>
+      <button class="hotkey" data-action="dance"><span class="hotkey-number">2</span><span class="action-icon">🕺</span><small>DANCE</small></button>
+      <button class="hotkey" data-action="sit"><span class="hotkey-number">3</span><span class="action-icon">🪑</span><small>SIT</small></button>
+      <div class="hotbar-divider"></div>
+      <button class="hotkey settings-key" id="helpButton"><span class="action-icon">?</span><small>HELP</small></button>
+    </nav>
+    <div class="mobile-controls" aria-label="Touch movement controls"><div class="joystick" id="joystick"><div class="joy-knob" id="joyKnob"></div></div><button class="jump-button" id="jumpButton">↑<small>JUMP</small></button></div>
+    <div class="modal-backdrop" id="modalBackdrop"><div class="modal panel"><button class="modal-close" id="modalClose">×</button><div class="modal-badge">✦</div><h2 id="modalTitle">Welcome to Blocktown!</h2><p id="modalText">A little corner of the internet to explore, collect shiny things, and meet new friends.</p><div class="help-grid"><div><b>MOVE</b><span>WASD or arrow keys</span></div><div><b>JUMP</b><span>Space or tap ↑</span></div><div><b>EMOTE</b><span>1, 2, 3 or use the hotbar</span></div><div><b>CHAT</b><span>Type a message and press Enter</span></div></div><button class="primary-button" id="playButton">LET'S PLAY <span>→</span></button></div></div>
+    <div class="name-editor panel" id="nameEditor"><strong>YOUR DISPLAY NAME</strong><form id="nameForm"><input id="nameInput" maxlength="14" placeholder="PLAYER" autocomplete="off"><button>OK</button></form></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
